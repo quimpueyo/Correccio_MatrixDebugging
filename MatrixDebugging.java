@@ -1,4 +1,4 @@
-
+package Entorns_MatrixDebugging;
 public class MatrixDebugging {
 
 	public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class MatrixDebugging {
         
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
-                transposedMatrix[i][j] = matrix[j][i]; // Error: El índice i y j están invertidos
+                transposedMatrix[j][i] = matrix[i][j]; // Les variables j e i estaven invertides fent que no imprimeixin el valor correcte.
             }
         }
 
@@ -38,7 +38,7 @@ public class MatrixDebugging {
 
         // Paso 3: Intentar acceder a un índice fuera de los límites
         try {
-            System.out.println("\nAccediendo al elemento en [3][0]: " + matrix[3][0]);
+            System.out.println("\nAccediendo al elemento en [2][0]: " + matrix[2][0]);//Que de la fila 0 agafo la 2a posició de la columna.De manera que no em paso de llarg.
         } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("\nError: " + e.toString());
         }
@@ -47,8 +47,8 @@ public class MatrixDebugging {
         try {
             int sum = 0;
             // Intento de sumar los elementos de la matriz de forma incorrecta
-            for (int i = 0; i <= matrix.length; i++) {  // Error: índice fuera de límites
-                for (int j = 0; j <= matrix[i].length; j++) {  // Error: índice fuera de límites
+            for (int i = 0; i < matrix.length; i++) {  // Trec el "=" perque no pot ser més llarg que la longitut de la matriu.
+                for (int j = 0; j < matrix[i].length; j++) {  // Trec el "=" perque no pot ser més llarg que la longitut de la matriu.
                     sum += matrix[i][j];
                 }
             }
